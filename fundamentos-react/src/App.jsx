@@ -9,6 +9,8 @@ import Familia from "./components/basicos/Familia";
 import FamiliaMembro from "./components/basicos/FamiliaMembro";
 import ListaAlunos from "./components/repeticao/ListaAlunos";
 import TabelaProdutos from "./components/repeticao/TabelaProdutos";
+import { ParOuImpar } from "./components/Condicional/ParOuImpar";
+import { UsuarioIno } from "./components/Condicional/UsuarioInfo";
 
 export default function App(props) {
   return (
@@ -35,8 +37,16 @@ export default function App(props) {
           <Card titulo="#5 Repetição alunos" color="#557515">
             <ListaAlunos />
           </Card>
-          <Card titulo="#6 Atividade - Repetição produtos" color="#557515">
+          <Card titulo="#6 Atividade - Repetição produtos" color="#92ff">
             <TabelaProdutos />
+          </Card>
+          <Card
+            titulo="#7 Atividade - Renderização par ou ímpar"
+            color="#007595"
+          >
+            <ParOuImpar numero={20} />
+            <UsuarioIno usuario={{ nome: "Suzany" }} />
+            <UsuarioIno usuario={{ email: "su@gmail.com" }} />
           </Card>
         </div>
       </div>

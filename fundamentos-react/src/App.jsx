@@ -15,6 +15,7 @@ import DiretaPai from "./components/Comunicacao/DiretaPai";
 import IndiretaPai from "./components/Comunicacao/IndiretaPai";
 import Input from "./components/formulario/Input";
 import Contador from "./components/contador/Contador";
+import Mega from "./components/desafioMegaSena/mega/Mega";
 
 export default function App(props) {
   return (
@@ -63,6 +64,9 @@ export default function App(props) {
           </Card>
           <Card titulo="#10 Atividade - Contador" color="#424242">
             <Contador numeroInicial={10} />
+          </Card>
+          <Card titulo="#11 Atividade - Megasena" color="#429042">
+            <Mega qtde={8} />
           </Card>
         </div>
       </div>

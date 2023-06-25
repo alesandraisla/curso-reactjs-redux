@@ -1,46 +1,8 @@
 import React, { useReducer } from "react";
 import PageTitle from "../../components/layout/PageTitle";
 
-const initialState = {
-  cart: [],
-  products: [],
-  user: null,
-  number: 0,
-};
+import { initialState, reducer } from "../../store/config";
 
-function reducer(stateActual, action) {
-  switch (action.type) {
-    case "numberAdd2":
-      return {
-        ...stateActual,
-        number: stateActual.number + 2,
-      };
-    case "login":
-      return { ...stateActual, user: { name: action.payload } };
-    case "numberMultiplicar7":
-      return {
-        ...stateActual,
-        number: stateActual.number * 7,
-      };
-    case "dividir25":
-      return {
-        ...stateActual,
-        number: stateActual.number / 25,
-      };
-    case "numberParseInt":
-      return {
-        ...stateActual,
-        number: parseInt(stateActual.number),
-      };
-    case "numberAddN":
-      return {
-        ...stateActual,
-        number: stateActual.number + action.payload,
-      };
-    default:
-      return stateActual;
-  }
-}
 // Criar uma ação pra multiplicar por 7
 // dividir numero atual por 25
 // ParseInt do numero e transformar pra inteiro

@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PageTitle from "../../components/layout/PageTitle";
 
 import DataContext from "../../data/DataContext";
+import { AppContext } from "../../data/Store";
 
 const UseContext = (props) => {
   const context = useContext(DataContext);
@@ -13,6 +14,14 @@ const UseContext = (props) => {
       number: context.state.number + delta,
     });
   }
+
+  const { number, text, setNumber, setText } = useContext(AppContext);
+
+  useEffect(() => {
+    if (number > 1250) {
+      setText("Número máximo");
+    }
+  }, [number, setText]);
 
   return (
     <div className="UseContext">
@@ -28,6 +37,18 @@ const UseContext = (props) => {
             -1
           </button>
           <button className="btn" onClick={() => addNumber(+1)}>
+            +1
+          </button>
+        </div>
+      </div>
+      <div className="center">
+        <span className="text">{text}</span>
+        <span className="text">{number}</span>
+        <div>
+          <button className="btn" onClick={() => setNumber(number - 1)}>
+            -1
+          </button>
+          <button className="btn" onClick={() => setNumber(number + 1)}>
             +1
           </button>
         </div>
